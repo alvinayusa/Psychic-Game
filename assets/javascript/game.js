@@ -8,18 +8,19 @@
 
 
 // array for the computerChoices
-var alphabets = ["a", "b", "c" ,"d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p","q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var alphabets = ["a", "b", "c","d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p","q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 // array to capture the userGuesses
 var inputs = [] 
 // variables to write to HTML
 var wins = 0
 var losses = 0
-var chances = 3
+var chances = 9
 
 // user will need to enter a random letter
 document.onkeyup = function () {
     var userGuess = event.key.
         toLowerCase()
+        console.log(userGuess)
 // user input will be captured in new array - inputs
     inputs.push(userGuess)
 // computer will randomize letters from the alphabets array
@@ -35,13 +36,12 @@ document.onkeyup = function () {
         // add to the wins, write the alert, reset the chances per round, empty the inputs array
         if (userGuess === computerChoices) {
             wins++
-            alert("Wins: " + wins)
-            chances = 3
+            chances = 9
             inputs.length = 0
         // if the chances per round reaches 0, losses are incremented, chances is zeroed out, empty the inputs array
         } else if (chances === 0){
             losses++
-            chances= 3
+            chances= 9
             inputs.length = 0
         // subtract chances per round until a good match
         } else {
